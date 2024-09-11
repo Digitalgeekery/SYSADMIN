@@ -1,0 +1,26 @@
+<#
+.SYNOPSIS
+  This script updates the Windows Registry to configure profile cleanup settings.
+.DESCRIPTION
+  The script sets a registry key to configure the automatic cleanup of user profiles on a Windows system.
+.PARAMETER None
+.INPUTS
+  None
+.OUTPUTS
+  None
+.NOTES
+  Version:        1.0
+  Author:         DIGITALGEEKERY
+  Creation Date:  11/09/2024
+  Purpose/Change: INITIAL SCRIPT DEVELOPMENT
+  Requires:       None
+  TODO:           Ensure the registry path and values are appropriate for the intended environment.
+
+.EXAMPLE
+  Save this script as a `.reg` file and merge it into the Windows Registry to apply the changes.
+#>
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+"CleanupProfiles"=dword:00000005
