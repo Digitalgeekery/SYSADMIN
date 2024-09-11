@@ -1,3 +1,25 @@
+<#
+.SYNOPSIS
+  This script updates the Windows Registry to set the wallpaper and its style.
+.DESCRIPTION
+  The script sets the wallpaper and its display style for the current user by modifying the Windows Registry.
+.PARAMETER None
+.INPUTS
+  None
+.OUTPUTS
+  None
+.NOTES
+  Version:        1.0
+  Author:         DIGITALGEEKERY
+  Creation Date:  11/09/2024
+  Purpose/Change: INITIAL SCRIPT DEVELOPMENT
+  Requires:       None
+  TODO:           Verify the path to the wallpaper image and the style value.
+
+.EXAMPLE
+  Save this script as a `.reg` file and merge it into the Windows Registry to apply the changes.
+#>
+
 Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]
