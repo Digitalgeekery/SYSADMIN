@@ -1,0 +1,26 @@
+<#
+.SYNOPSIS
+  This script updates the Windows Registry to remap keyboard keys.
+.DESCRIPTION
+  The script modifies the keyboard layout by changing the scancode map in the Windows Registry to remap specific keys.
+.PARAMETER None
+.INPUTS
+  None
+.OUTPUTS
+  None
+.NOTES
+  Version:        1.0
+  Author:         DIGITALGEEKERY
+  Creation Date:  11/09/2024
+  Purpose/Change: INITIAL SCRIPT DEVELOPMENT
+  Requires:       None
+  TODO:           Verify the scancode map and its effect on the keyboard layout.
+
+.EXAMPLE
+  Save this script as a `.reg` file and merge it into the Windows Registry to apply the key remappings.
+#>
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map"=hex:00,00,00,00,00,00,00,00,04,00,00,00,2a,e0,37,e0,00,00,37,e0,00,00,54,00,00,00,00,00
