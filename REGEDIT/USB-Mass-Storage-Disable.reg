@@ -1,0 +1,68 @@
+<#
+.SYNOPSIS
+  This script updates the Windows Registry to configure settings for USB Mass Storage drivers.
+.DESCRIPTION
+  The script modifies the registry settings for the USB Mass Storage driver across different control sets.
+.PARAMETER None
+.INPUTS
+  None
+.OUTPUTS
+  None
+.NOTES
+  Version:        1.0
+  Author:         DIGITALGEEKERY
+  Creation Date:  11/09/2024
+  Purpose/Change: INITIAL SCRIPT DEVELOPMENT
+  Requires:       None
+  TODO:           Ensure the settings match the required configuration for USB Mass Storage drivers.
+
+.EXAMPLE
+  Save this script as a `.reg` file and merge it into the Windows Registry to apply the USB Mass Storage driver settings.
+#>
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\USBSTOR]
+"Start"=dword:00000004
+"Type"=dword:00000001
+"ErrorControl"=dword:00000001
+"ImagePath"=hex(2):73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,44,00,\
+  52,00,49,00,56,00,45,00,52,00,53,00,5c,00,55,00,53,00,42,00,53,00,54,00,4f,\
+  00,52,00,2e,00,53,00,59,00,53,00,00,00
+"DisplayName"="USB Mass Storage Driver"
+"DriverPackageId"="usbstor.inf_x86_neutral_c77d41a490bdc63d"
+"BootFlags"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\USBSTOR\Enum]
+"0"="USB\\VID_0951&PID_1665\\60A44C4138CCFE50F9692577"
+"Count"=dword:00000001
+"NextInstance"=dword:00000001
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\USBSTOR]
+"Start"=dword:00000004
+"Type"=dword:00000001
+"ErrorControl"=dword:00000001
+"ImagePath"=hex(2):73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,44,00,\
+  52,00,49,00,56,00,45,00,52,00,53,00,5c,00,55,00,53,00,42,00,53,00,54,00,4f,\
+  00,52,00,2e,00,53,00,59,00,53,00,00,00
+"DisplayName"="USB Mass Storage Driver"
+"DriverPackageId"="usbstor.inf_x86_neutral_c77d41a490bdc63d"
+"BootFlags"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\USBSTOR\Enum]
+"0"="USB\\VID_0951&PID_1665\\60A44C4138CCFE50F9692577"
+"Count"=dword:00000001
+"NextInstance"=dword:00000001
+
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\services\USBSTOR]
+"Start"=dword:00000004
+"Type"=dword:00000001
+"ErrorControl"=dword:00000001
+"ImagePath"=hex(2):5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,\
+  74,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,64,00,72,\
+  00,69,00,76,00,65,00,72,00,73,00,5c,00,55,00,53,00,42,00,53,00,54,00,4f,00,\
+  52,00,2e,00,53,00,59,00,53,00,00,00
